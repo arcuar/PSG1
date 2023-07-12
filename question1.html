@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서전서숙 설립</title>
+    <style>
+      @font-face {
+        font-family: "KCC-Ganpan";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: KCC-Ganpan;
+
+        background-color: ivory;
+      }
+      .btn {
+        letter-spacing: 1px;
+        box-shadow: 2px 2px 2px gray;
+        font-weight: lighter;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: burlywood;
+        text-decoration-line: none;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script type="text/babel">
+    const BackToHome = () => (
+      <a
+        href=""
+        style={{ textDecorationLine: "none", color: "black" }}
+        onClick={(event) => {
+          event.preventDefault();
+          window.location.replace("index.html");
+        }}
+      >
+        {"<< "}처음 화면으로
+      </a>
+    );
+    const Title = () => (
+      <h1
+        style={{
+          color: "firebrick",
+
+          fontWeight: "bold",
+        }}
+      >
+        미션1. 서전서숙 설립
+      </h1>
+    );
+    const Question1 = () => <p>I. 서전서숙 설립 년도는? </p>;
+    const AnswerBox1 = () => (
+      <input
+        id="answer1"
+        placeholder="ex. 2023"
+        style={{ marginBottom: "10px" }}
+      ></input>
+    );
+    const HintButton = () => (
+      <a
+        className="btn"
+        href=""
+        style={{ marginRight: "5px" }}
+        onClick={(event) => {
+          event.preventDefault();
+          if (
+            confirm("당신은 정말 서전서숙의 설립 년도를 모르십니까?") == true
+          ) {
+            alert("검색해보세요.");
+          }
+        }}
+      >
+        힌트
+      </a>
+    );
+    const SubmitButton1 = () => (
+      <a
+        className="btn"
+        href=""
+        style={{ marginLeft: "5px" }}
+        onClick={(event) => {
+          event.preventDefault();
+          const answer = $("#answer1").val();
+          if (answer === "1906" || answer === "1906년") {
+            alert("정답!!\n\n글자'헤'를 기억해주세요!");
+          } else {
+            alert("오답");
+          }
+        }}
+      >
+        정답 제출
+      </a>
+    );
+    const Question2 = () => (
+      <p style={{ marginTop: "90px" }}>II. 서전서숙 설립 인물은?</p>
+    );
+    const AnswerBox2 = () => (
+      <input
+        id="answer2"
+        style={{ marginBottom: "10px" }}
+        placeholder="ex. 송지후"
+      ></input>
+    );
+    const SubmitButton2 = () => (
+      <a
+        className="btn"
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          const answer = $("#answer2").val();
+          if (answer === "이상설") {
+            alert("정답!!\n\n글자'이'를 기억해주세요!");
+          } else {
+            alert("오답");
+          }
+        }}
+      >
+        정답 제출
+      </a>
+    );
+    const Question3 = () => (
+      <p style={{ marginTop: "90px" }}>
+        III. 서전서숙을 계승한 현대의 고등학교 이름은?
+      </p>
+    );
+    const AnswerBox3 = () => (
+      <input
+        id="answer3"
+        style={{ marginBottom: "10px" }}
+        placeholder="ex. 진천고"
+      ></input>
+    );
+    const SubmitButton3 = () => (
+      <a
+        className="btn"
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          const answer = $("#answer3").val();
+          if (
+            answer === "서전고" ||
+            answer === "서전고등학교" ||
+            answer === "서전" ||
+            answer === "서전 고등학교"
+          ) {
+            alert("정답!!\n\n글자'그'를 기억해주세요!");
+          } else {
+            alert("오답");
+          }
+        }}
+      >
+        정답 제출
+      </a>
+    );
+    const NextPageBtn = () => (
+      <a
+        className="btn"
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          window.location.replace("question2.html");
+        }}
+      >
+        다음 페이지 →
+      </a>
+    );
+    const Container = () => (
+      <div>
+        <BackToHome />
+        <div style={{ textAlign: "center" }}>
+          <Title />
+          <Question1 />
+          <AnswerBox1 />
+          <p>
+            <HintButton />
+            <SubmitButton1 />
+          </p>
+          <Question2 />
+          <AnswerBox2 />
+          <p>
+            <SubmitButton2 />
+          </p>
+          <Question3 />
+          <AnswerBox3 />
+          <p>
+            <SubmitButton3 />
+          </p>
+          <div style={{ margin: "100px" }}></div>
+          <NextPageBtn />
+        </div>
+      </div>
+    );
+    ReactDOM.render(<Container />, document.querySelector("body"));
+  </script>
+</html>

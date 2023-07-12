@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서전서숙 설립</title>
+    <style>
+      @font-face {
+        font-family: "KCC-Ganpan";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: KCC-Ganpan;
+        text-align: center;
+        background-color: ivory;
+      }
+      .btn {
+        letter-spacing: 1px;
+        box-shadow: 2px 2px 2px gray;
+        font-weight: lighter;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: burlywood;
+        text-decoration-line: none;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script type="text/babel">
+    const Title = () => (
+      <h1
+        style={{
+          color: "firebrick",
+
+          fontWeight: "bold",
+        }}
+      >
+        미션1. 서전서숙 설립
+      </h1>
+    );
+    const Question = () => (
+      <p>
+        앞선 문제들을 풀며 얻은 글자들을 조합하여서 단어를 만들어 제출하세요!
+      </p>
+    );
+    const AnswerBox = () => (
+      <input id="answer" placeholder="ex. 베를린"></input>
+    );
+    const SubmitButton = () => (
+      <a
+        className="btn"
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          if ($("#answer").val() == "헤이그") {
+            alert(
+              "정답!\n\n숫자 '0713'을 기억해주세요!\n헤이그 지역으로 이동해주세요🙏🙏"
+            );
+          } else {
+            alert("오답");
+          }
+        }}
+      >
+        정답 제출
+      </a>
+    );
+    const PreviousPageBtn = () => (
+      <a
+        className="btn"
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          window.location.replace("question1.html");
+        }}
+      >
+        ← 이전 페이지
+      </a>
+    );
+    const Container = () => (
+      <div>
+        <Title />
+        <Question />
+        <p>
+          <AnswerBox />
+        </p>
+        <p style={{ marginBottom: "70px" }}>
+          <SubmitButton />
+        </p>
+        <PreviousPageBtn />
+      </div>
+    );
+    ReactDOM.render(<Container />, document.querySelector("body"));
+  </script>
+</html>

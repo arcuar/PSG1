@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @font-face {
+        font-family: "KCC-Ganpan";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: KCC-Ganpan;
+        text-align: center;
+        background-color: ivory;
+      }
+    </style>
+    <title>이상설 선생과 카트라이더</title>
+  </head>
+  <body></body>
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script type="text/babel">
+    const Title = () => (
+      <h1
+        style={{
+          marginTop: "60px",
+        }}
+      >
+        이상설 선생과 함께하는 카트라이더
+      </h1>
+    );
+    const Explain = () => (
+      <h3 style={{ fontWeight: "400" }}>
+        이상설 선생을 도와 조국의 통일에 이바지하라!
+      </h3>
+    );
+    const SubTitle = () => (
+      <p
+        style={{
+          fontSize: "30px",
+          textDecoration: "red wavy underline",
+          textUnderlinePosition: "under",
+        }}
+      >
+        미션1. 서전서숙
+      </p>
+    );
+    const Button = () => (
+      <a
+        href=""
+        style={{
+          fontSize: "large",
+          letterSpacing: "1px",
+          boxShadow: "2px 2px 2px gray",
+          fontWeight: "bolder",
+          color: "white",
+          padding: "25px",
+          marginTop: "20px",
+          borderRadius: "15px",
+          backgroundColor: "burlywood",
+          textDecorationLine: "none",
+        }}
+        onClick={(event) => {
+          event.preventDefault();
+          window.location.replace("question1.html");
+        }}
+      >
+        시작하기
+      </a>
+    );
+    const Container = () => (
+      <div>
+        <Title />
+        <Explain />
+        <SubTitle />
+        <br />
+        <Button />
+      </div>
+    );
+    ReactDOM.render(<Container />, document.querySelector("body"));
+  </script>
+</html>
